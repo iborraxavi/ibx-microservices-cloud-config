@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ibx-gateway
+  cloud:
+    config:
+      uri: http://host.docker.internal:8888  #where the config-service is running
+      fail-fast: true             #the service will not run if it can't reach the config-service
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://host.docker.internal:8761/eureka/
